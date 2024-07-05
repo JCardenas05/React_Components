@@ -18,8 +18,10 @@ Para este proyecto, necesitas instalar las siguientes dependencias:
 ## Imágenes de Ejemplo
 
 ### Sidebar Colapsado
+<img src="https://github.com/JCardenas05/React_Components/blob/main/SideBar/previews/collapsed.jpeg?raw=true" style="width: 400px; height: 300px; display: block; margin: 0 auto; text-align: center;">
 
 ### Sidebar Expandido
+<img src="https://github.com/JCardenas05/React_Components/blob/main/SideBar/previews/expanded.jpeg?raw=true" style="width: 400px; height: 300px; display: block; margin: 0 auto; text-align: center;">
 
 ## Características
 - **Expandible/Colapsable:** El sidebar se puede expandir y colapsar, y recuerda su estado usando localStorage.
