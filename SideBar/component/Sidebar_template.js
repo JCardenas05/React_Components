@@ -3,7 +3,7 @@
 import { ChevronFirst, ChevronLast, MoreVertical, ChevronDown, ChevronRight } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from "@/../public/logo.png";
+import logo from "@/../public/Binance-logo.png";
 import profile from "@/../public/profile.png";
 import { createContext, useContext, useEffect, useState } from "react";
 import './styles.css';
@@ -74,12 +74,12 @@ export function SidebarItem({ icon, text, active, alert, link, children }) {
                 className={`relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group ${active ? "sidebar-item-expanded" : "sidebar-item-collapsed"}`}
                 onClick={() => {
                     if (!expanded) {
-                    setSubmenuOpen((prev) => !prev);
+                        setSubmenuOpen((prev) => !prev);
                     }
                 }}
             >
-                <Link href={link}> {/* Usar Link con href */}
-                    <a className={`flex items-center space-x-2 ${expanded ? '' : 'pointer-events-none'}`}> {/* Usar 'pointer-events-none' cuando no está expandido */}
+                <Link href={link}>
+                    <div className={`flex items-center space-x-2 ${expanded ? '' : 'pointer-events-none'}`}>
                         {icon}
                         <span className={`menu-text ${expanded ? "sidebar-text-expanded" : "sidebar-text-collapsed"}`}>{text}</span>
                         {hasSubmenu && expanded && (
@@ -93,17 +93,17 @@ export function SidebarItem({ icon, text, active, alert, link, children }) {
                                 {submenuOpen ? <ChevronDown /> : <ChevronRight />}
                             </button>
                         )}
-                    </a>
+                    </div>
                 </Link>
                 {alert && (
                     <div className={`absolute right-2 w-2 h-2 rounded bg-indigo-400 ${expanded ? "" : "top-2"}`}></div>
                 )}
-                {!expanded && !hasSubmenu &&(
+                {!expanded && !hasSubmenu && (
                     <div className={`absolute left-full rounded-md px-2 py-1 ml-6 bg-indigo-100 text-indigo-800 text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0`}>
                         {text}
                     </div>
                 )}
-                {!expanded && hasSubmenu &&(
+                {!expanded && hasSubmenu && (
                     <ul className="sidebar-submenu-open">
                         {children}
                     </ul>
@@ -117,6 +117,7 @@ export function SidebarItem({ icon, text, active, alert, link, children }) {
         </li>
     );
 }
+
 
 export function SubmenuItem({ icon, text, link }) {
     return (
